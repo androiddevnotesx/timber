@@ -42,12 +42,3 @@ jobs:
           draft: false
           prerelease: false
 
-      - name: Upload AAR to Release
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.ANDROIDDEVNOTESX_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./library/build/outputs/aar/library-release.aar
-          asset_name: library-release.aar
-          asset_content_type: application/zip
